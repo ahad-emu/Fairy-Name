@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'Bootstrap/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'CSS/style.css'%}">
+    <title></title>
+  </head>
+  <body>
+    <div class="">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="{% static 'images/logo.png'%}" alt="logo" height="30" width="150">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="#">Portfolio</a>
+            <a class="nav-item nav-link" href="#">About US</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="background"></div>
+    <hr>
+    <div class="container pt-3 pb-3">
+      <form class="" action="{% url 'search' %}" method="get">
+        <div class="row">
+          <div class="col-md-4 pl-5">
+            <input type="radio" name="genre" value="child" class="mr-2" required>My Child<br>
+            <input type="radio" name="genre" value="cat" class="mr-2">My Cat<br>
+            <input type="radio" name="genre" value="dog" class="mr-2">My Dog<br>
+          </div>
+          <div class="col-md-4 pl-5">
+            <input type="radio" name="gender" value="male" class="mr-2" required>Male<br>
+            <input type="radio" name="gender" value="Female" class="mr-2">Female<br>
+            <input type="radio" name="gender" value="Independent" class="mr-2">Independent<br>
+          </div>
+          <div class="col-md-4 pt-2 pl-5">
+            <input class="btn button" type="submit" name="submit" value="Generate">
+          </div>
+        </div>
+      </form>
+    </div>
+      <hr>
+      <h3 class="text-center">NAME</h3>
+      <div class="border-box">
+        {% if items %}
+          {% for item in items %}
+            <span class="fairy_name">{{item.name}}</span>
+          {% endfor %}
+        {% endif %}
+      </div>
+
+  </body>
+</html>

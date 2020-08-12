@@ -1,0 +1,27 @@
+.background{
+  background-image: url("../images/background.45843b2a52a0.png");
+  background-repeat: no-repeat;
+  background-size: 350px 200px;
+  background-position: center;
+  height: 300px;
+}
+body{
+  background-color: #fce8e6;
+}
+.button{
+  background-color: #fe5826;
+  height: 40px;
+  width: 120px;
+}
+.border-box{
+  height: 80px;
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: auto;
+  text-align: center;
+}
+.fairy_name{
+  text-align: center;
+  font-size: 36px;
+}
