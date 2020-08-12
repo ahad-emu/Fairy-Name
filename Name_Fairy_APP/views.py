@@ -24,8 +24,11 @@ def search(request):
         if genre:
             query_list = query_list.filter(genre__iexact=genre)
 
+    number = len(query_list)
+    if number == 0:
+        query_list = "sorry :) :)"
+
     context = {
-        'count': counter,
         'items': query_list,
     }
     return render(request, "index.html", context)
